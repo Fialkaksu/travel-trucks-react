@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  align-items: center;
+  color: var(--inputs);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(@assets/hero/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media (min-resolution: 192dpi) or (min-resolution: 2dppx) {
+  .main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(@assets/hero/hero@2x.jpg);
+  }
+}
+
+@media (min-resolution: 288dpi) or (min-resolution: 3dppx) {
+  .main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(@assets/hero/hero@3x.jpg);
+  }
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 0.66667;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+.link {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+}

@@ -1,0 +1,24 @@
+.icon {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.small {
+  width: 20px;
+  height: 20px;
+}
+
+.iconMap {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+}
+
+.iconStar {
+  width: 16px;
+  height: 16px;
+  fill: var(--rating);
+}
