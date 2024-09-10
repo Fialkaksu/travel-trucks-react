@@ -9,6 +9,11 @@
   height: 20px;
 }
 
+.smallest {
+  width: 16px;
+  height: 16px;
+}
+
 .iconMap {
   width: 20px;
   height: 20px;

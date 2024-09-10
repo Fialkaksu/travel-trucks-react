@@ -42,7 +42,7 @@ const Camper = ({ camper }) => {
               {rating} ({reviews.length} Reviews)
             </span>
             <span className={css.location}>
-              <Icon name="icon-map" className='iconMap' />
+              <Icon name="icon-map" className='smallest' />
               {location}
             </span>
           </p>
