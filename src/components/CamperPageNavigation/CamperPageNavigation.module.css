@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 24px;
+}
+
+.link {
+  position: relative;
+  padding-bottom: 24px;
+  font-size: var(--font-medium);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main);
+}
+
+.link:hover::after,
+.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--button);
+  transition: width var(--animation-cubicBezier);
+}

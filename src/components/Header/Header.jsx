@@ -6,10 +6,6 @@ import logo from '@assets/logo.svg'
 
 import css from './Header.module.css'
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
-
 const Header = () => {
   return (
     <header className={css.header}>
@@ -22,7 +18,7 @@ const Header = () => {
           <ul className={css.list}>
             <li className={css.item}>
               <NavLink
-                className={buildLinkClass}
+                className={({ isActive }) => clsx(css.link, isActive && css.active)}
                 to="/"
               >
                 Home
@@ -30,7 +26,7 @@ const Header = () => {
             </li>
             <li className={css.item}>
               <NavLink
-                className={buildLinkClass}
+                className={({ isActive }) => clsx(css.link, isActive && css.active)}
                 to="/catalog"
               >
                 Catalog

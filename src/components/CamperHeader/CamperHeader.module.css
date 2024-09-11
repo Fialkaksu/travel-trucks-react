@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.camperTitle,
+.price {
+  font-weight: 600;
+  font-size: var(--font-large);
+  line-height: 1.33333;
+  color: var(--main);
+}
+
+.camperPrice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.camperRating {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.rating,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ratingValue {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
