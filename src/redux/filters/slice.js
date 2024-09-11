@@ -1,15 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+
+export const initialState = {
+  location: '',
+  equipment: [],
+  vehicleType: '',
+};
 
 const filtersSlice = createSlice({
-  name: "filters",
-  initialState: {
-    location: "",
-    equipment: [],
-    vehicleType: "",
-  },
+  name: 'filters',
+  initialState,
   reducers: {
     changeFilter(state, action) {
-      state[action.payload.name] = action.payload.value;
+      for (const key in action.payload) {
+        state[key] = action.payload[key];
+      }
     },
   },
 });

@@ -83,6 +83,8 @@
   border: 1px solid var(--gray-light);
   border-radius: 12px;
   cursor: pointer;
+  transition: border-color var(--animation-cubicBezier),
+    box-shadow var(--animation-cubicBezier);
 }
 
 .equipmentLabel:hover,
@@ -94,6 +96,7 @@
 .equipmentLabel:has(:checked),
 .vehicleTypeLabel:has(:checked) {
   border-color: var(--button);
+  box-shadow: var(--shadow-small);
 }
 
 .checkbox,

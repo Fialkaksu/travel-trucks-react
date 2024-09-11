@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getCampers, getCamperById } from "./operations";
+import { createSlice } from '@reduxjs/toolkit';
+import { getCampers, getCamperById } from './operations';
 
-const handlePending = (state) => {
+const handlePending = state => {
   state.loading = true;
 };
 
@@ -11,7 +11,7 @@ const handleRejected = (state, action) => {
 };
 
 const campersSlice = createSlice({
-  name: "campers",
+  name: 'campers',
   initialState: {
     total: 0,
     items: [],
@@ -19,7 +19,7 @@ const campersSlice = createSlice({
     loading: false,
     error: null,
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
       .addCase(getCampers.pending, handlePending)
       .addCase(getCampers.fulfilled, (state, { payload: { total, items } }) => {

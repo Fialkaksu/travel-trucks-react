@@ -1,15 +1,14 @@
-import { lazy, Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { lazy, Suspense } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 
-import Header from '@components/Header/Header'
-import Loader from '@components/Loader/Loader'
+import Header from "@components/Header/Header";
+import Loader from "@components/Loader/Loader";
 
-const HomePage = lazy(() => import('@pages/HomePage/HomePage'));
-const CatalogPage = lazy(() => import('@pages/CatalogPage/CatalogPage'));
-const CamperPage = lazy(() => import('@pages/CamperPage/CamperPage'));
-const NotFoundPage = lazy(() => import('@pages/NotFoundPage/NotFoundPage'));
-const Features = lazy(() => import('@components/Features/Features'));
-const Reviews = lazy(() => import('@components/Reviews/Reviews'));
+const HomePage = lazy(() => import("@pages/HomePage/HomePage"));
+const CatalogPage = lazy(() => import("@pages/CatalogPage/CatalogPage"));
+const CamperPage = lazy(() => import("@pages/CamperPage/CamperPage"));
+const Features = lazy(() => import("@components/Features/Features"));
+const Reviews = lazy(() => import("@components/Reviews/Reviews"));
 
 const App = () => {
   return (
@@ -24,11 +23,11 @@ const App = () => {
             <Route path="features" element={<Features />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

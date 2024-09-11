@@ -2,15 +2,16 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import DocumentTitle from '@components/DocumentTitle';
-import Container from '@components/Container/Container'
-import FiltersForm from '@components/FiltersForm/FiltersForm'
-import Campers from '@components/Campers/Campers'
-import Loader from '@components/Loader/Loader'
+import Container from '@components/Container/Container';
+import FiltersForm from '@components/FiltersForm/FiltersForm';
+import Campers from '@components/Campers/Campers';
+import Loader from '@components/Loader/Loader';
 
-import { getCampers } from '@redux/campers/operations'
-import { selectIsLoading } from '@redux/campers/selectors'
+import { getCampers } from '@redux/campers/operations';
+import { selectIsLoading } from '@redux/campers/selectors';
+import { changeFilter, initialState } from '@redux/filters/slice';
 
-import css from './CatalogPage.module.css'
+import css from './CatalogPage.module.css';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -18,15 +19,16 @@ const CatalogPage = () => {
 
   useEffect(() => {
     dispatch(getCampers());
+    return () => dispatch(changeFilter(initialState));
   }, [dispatch]);
 
   return (
     <>
-      <DocumentTitle title='Catalog' />
+      <DocumentTitle title="Catalog" />
 
       <main>
         <section className={css.section}>
-          <Container className='catalog'>
+          <Container className="catalog">
             <FiltersForm />
             {isLoading && <Loader />}
             <Campers />
@@ -34,7 +36,7 @@ const CatalogPage = () => {
         </section>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default CatalogPage
+export default CatalogPage;

@@ -61,11 +61,11 @@
 }
 
 .camperDescription {
-  /* width: 100%;
-  max-width: 400px; */
+  width: 100%;
+  max-width: 500px;
   line-height: 1.5;
   color: var(--text);
-  /* white-space: nowrap; */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }

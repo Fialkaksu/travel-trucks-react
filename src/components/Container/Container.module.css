@@ -19,6 +19,6 @@
 
 .catalog {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 360px 888px;
   gap: 64px;
 }

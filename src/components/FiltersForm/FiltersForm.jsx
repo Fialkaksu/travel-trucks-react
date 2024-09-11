@@ -1,9 +1,11 @@
 import { Formik, Form, Field } from 'formik';
+import { useDispatch } from 'react-redux';
 
 import Button from '@components/Button/Button';
 import Icon from '@components/Icon/Icon';
+import { changeFilter } from '@redux/filters/slice';
 
-import css from './FiltersForm.module.css'
+import css from './FiltersForm.module.css';
 
 const INITIAL_VALUES = {
   location: '',
@@ -21,13 +23,20 @@ const EQUIPMENT_OPTIONS = [
 
 const VEHICLE_TYPE_OPTIONS = [
   { label: 'Van', value: 'panelTruck', icon: 'icon-van' },
-  { label: 'Fully Integrated', value: 'fullyIntegrated', icon: 'icon-fully-integrated' },
+  {
+    label: 'Fully Integrated',
+    value: 'fullyIntegrated',
+    icon: 'icon-fully-integrated',
+  },
   { label: 'Alcove', value: 'alcove', icon: 'icon-alcove' },
 ];
 
 const FiltersForm = () => {
-  const handleSubmit = (values) => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = values => {
     console.log('Form submitted with values:', values);
+    dispatch(changeFilter(values));
   };
 
   return (
@@ -35,15 +44,18 @@ const FiltersForm = () => {
       {({ values, setFieldValue }) => (
         <Form className={css.form}>
           <div className={css.location}>
-            <label htmlFor="location" className={css.locationLabel}>Location</label>
+            <label htmlFor="location" className={css.locationLabel}>
+              Location
+            </label>
             <div className={css.inputWrapper}>
-              <Icon name="icon-map" className='iconMap' />
+              <Icon name="icon-map" className="iconMap" />
               <Field
                 type="text"
                 id="location"
                 name="location"
                 placeholder="City"
                 className={css.locationInput}
+                aria-label="Location"
               />
             </div>
           </div>
@@ -54,7 +66,7 @@ const FiltersForm = () => {
             <h4 className={css.subTitle}>Vehicle equipment</h4>
             <hr className={css.separator} />
             <div className={css.equipmentOptions}>
-              {EQUIPMENT_OPTIONS.map((option) => (
+              {EQUIPMENT_OPTIONS.map(option => (
                 <label key={option.value} className={css.equipmentLabel}>
                   <Field
                     type="checkbox"
@@ -66,10 +78,13 @@ const FiltersForm = () => {
                       setFieldValue(
                         'equipment',
                         values.equipment.includes(option.value)
-                          ? values.equipment.filter((item) => item !== option.value)
+                          ? values.equipment.filter(
+                            item => item !== option.value
+                          )
                           : [...values.equipment, option.value]
                       )
                     }
+                    aria-label={option.label}
                   />
                   <Icon name={option.icon} />
                   {option.label}
@@ -82,13 +97,14 @@ const FiltersForm = () => {
             <h4 className={css.subTitle}>Vehicle type</h4>
             <hr className={css.separator} />
             <div className={css.vehicleTypeOptions}>
-              {VEHICLE_TYPE_OPTIONS.map((option) => (
+              {VEHICLE_TYPE_OPTIONS.map(option => (
                 <label key={option.value} className={css.vehicleTypeLabel}>
                   <Field
                     type="radio"
                     name="vehicleType"
                     value={option.value}
                     className={css.radioButton}
+                    aria-label={option.label}
                   />
                   <Icon name={option.icon} />
                   {option.label}
@@ -97,11 +113,13 @@ const FiltersForm = () => {
             </div>
           </div>
 
-          <Button type="submit">Search</Button>
+          <Button type="submit" aria-label="Search">
+            Search
+          </Button>
         </Form>
       )}
     </Formik>
   );
 };
 
-export default FiltersForm
+export default FiltersForm;

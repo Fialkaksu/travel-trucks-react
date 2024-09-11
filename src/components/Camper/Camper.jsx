@@ -6,10 +6,30 @@ import Icon from '@components/Icon/Icon';
 import css from './Camper.module.css';
 
 const Camper = ({ camper }) => {
-  const { id, name, rating, location, price, description, transmission, engine, AC, bathroom, kitchen, TV, radio, gallery, reviews } = camper;
+  const {
+    id,
+    name,
+    rating,
+    location,
+    price,
+    description,
+    transmission,
+    engine,
+    AC,
+    bathroom,
+    kitchen,
+    TV,
+    radio,
+    gallery,
+    reviews,
+  } = camper;
 
   const equipment = [
-    { icon: 'icon-automatic', label: 'Automatic', available: transmission === 'automatic' },
+    {
+      icon: 'icon-automatic',
+      label: 'Automatic',
+      available: transmission === 'automatic',
+    },
     { icon: 'icon-fuel', label: engine, available: engine },
     { icon: 'icon-kitchen', label: 'Kitchen', available: kitchen },
     { icon: 'icon-ac', label: 'AC', available: AC },
@@ -20,11 +40,7 @@ const Camper = ({ camper }) => {
 
   return (
     <div className={css.camperCard}>
-      <img
-        src={gallery[0].thumb}
-        alt={name}
-        className={css.camperImage}
-      />
+      <img src={gallery[0].thumb} alt={name} className={css.camperImage} />
 
       <div className={css.camperDetails}>
         <div className={css.header}>
@@ -32,17 +48,17 @@ const Camper = ({ camper }) => {
             <h2 className={css.camperTitle}>{name}</h2>
             <p className={css.camperPrice}>
               <span className={css.price}>€{price.toFixed(2)}</span>
-              <Icon name="icon-heart" className='small' />
+              <Icon name="icon-heart" className="small" />
             </p>
           </div>
 
           <p className={css.camperRating}>
             <span className={css.rating}>
-              <Icon name="icon-star" className='iconStar' />
+              <Icon name="icon-star" className="iconStar" />
               {rating} ({reviews.length} Reviews)
             </span>
             <span className={css.location}>
-              <Icon name="icon-map" className='smallest' />
+              <Icon name="icon-map" className="smallest" />
               {location}
             </span>
           </p>
@@ -59,7 +75,7 @@ const Camper = ({ camper }) => {
           ))}
         </div>
 
-        <Button className={css.showMoreButton}>
+        <Button className={css.showMoreButton} aria-label="Show More">
           <Link to={`/catalog/${id}`}>Show More</Link>
         </Button>
       </div>
