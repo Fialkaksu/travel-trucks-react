@@ -69,11 +69,12 @@ const BookingForm = () => {
                 setStartDate(date);
                 setFieldValue('date', date);
               }}
+              startDate={today}
               minDate={tomorrow}
               dateFormat="MMMM d, yyyy"
               highlightDates={[today]}
               placeholderText="Booking date*"
-              className={`${css.input} custom-datepicker`}
+              className={css.input}
             />
             <ErrorMessage className={css.error} name="date" component="span" />
           </div>
