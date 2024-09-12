@@ -1,5 +1,11 @@
 .equipmentList {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1440px) {
+  .equipmentList {
+    gap: 8px;
+  }
 }

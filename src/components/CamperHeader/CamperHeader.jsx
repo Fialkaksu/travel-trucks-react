@@ -11,7 +11,7 @@ const CamperHeader = ({ isCamperDetails, name, price, rating, location, reviews 
         {!isCamperDetails && (
           <p className={css.camperPrice}>
             <span className={css.price}>€{price.toFixed(2)}</span>
-            <Icon name="icon-heart" className="small" />
+            <Icon name="icon-heart" className="iconHeart" />
           </p>
         )}
       </div>

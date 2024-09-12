@@ -1,17 +1,31 @@
 .menu {
   display: flex;
-  gap: 40px;
+  gap: 18px;
   border-bottom: 1px solid var(--gray-light);
-  padding-bottom: 24px;
+  padding-bottom: 14px;
+}
+
+@media screen and (min-width: 1440px) {
+  .menu {
+    gap: 40px;
+    padding-bottom: 24px;
+  }
 }
 
 .link {
   position: relative;
-  padding-bottom: 24px;
-  font-size: var(--font-medium);
+  padding-bottom: 14px;
+  font-size: var(--font-small);
   font-weight: 600;
   line-height: 1.2;
   color: var(--main);
+}
+
+@media screen and (min-width: 1440px) {
+  .link {
+    padding-bottom: 24px;
+    font-size: var(--font-medium);
+  }
 }
 
 .link:hover::after,

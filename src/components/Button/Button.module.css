@@ -1,14 +1,27 @@
 .btn {
-  height: 56px;
+  height: 46px;
+  align-self: center;
   border-radius: 200px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.1;
   letter-spacing: -0.01em;
   box-shadow: var(--shadow-small);
-  cursor: pointer;
   transition: background-color var(--animation-cubicBezier),
     box-shadow var(--animation-cubicBezier),
     border-color var(--animation-cubicBezier);
+}
+
+@media screen and (min-width: 375px) {
+  .btn {
+    align-self: start;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .btn {
+    height: 56px;
+    line-height: 1.5;
+  }
 }
 
 .btn:hover,
@@ -44,4 +57,8 @@
 .outlined:focus,
 .outlined:active {
   border: 1px solid var(--button-hover);
+}
+
+.center {
+  align-self: center;
 }

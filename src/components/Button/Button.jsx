@@ -5,6 +5,7 @@ const Button = ({
   type = 'button',
   variant = 'contained',
   main = false,
+  selfcenter = false,
   children,
   ...otherProps
 }) => {
@@ -13,6 +14,7 @@ const Button = ({
       className={clsx(css.btn, {
         [css[variant]]: variant,
         [css.main]: main,
+        [css.center]: selfcenter,
       })}
       type={type}
       {...otherProps}
