@@ -10,9 +10,9 @@ const filtersSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    changeFilter(state, action) {
-      for (const key in action.payload) {
-        state[key] = action.payload[key];
+    changeFilter(state, { payload }) {
+      for (const key in payload) {
+        state[key] = payload[key];
       }
     },
   },

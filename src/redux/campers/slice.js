@@ -21,8 +21,8 @@ const campersSlice = createSlice({
     error: null,
   },
   reducers: {
-    changePage(state, action) {
-      state.page = action.payload;
+    changePage(state, { payload }) {
+      state.page = payload;
     },
   },
   extraReducers: builder => {
