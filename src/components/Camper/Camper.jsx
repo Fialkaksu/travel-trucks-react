@@ -25,7 +25,9 @@ const Camper = ({ camper }) => {
         <EquipmentList equipment={equipment} />
 
         <Button aria-label="Show More">
-          <Link to={`/catalog/${id}`} className={css.link}>Show More</Link>
+          <Link to={`/catalog/${id}/features`} className={css.link}>
+            Show More
+          </Link>
         </Button>
       </div>
     </div>

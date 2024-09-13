@@ -10,3 +10,19 @@
     gap: 40px;
   }
 }
+
+.notFound {
+  font-size: var(--font-large);
+  text-align: center;
+  padding: 20px;
+  color: var(--main);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (min-width: 1440px) {
+  .notFound {
+    font-size: var(--font-large);
+  }
+}

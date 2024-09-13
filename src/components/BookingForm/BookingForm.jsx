@@ -20,7 +20,7 @@ const INITIAL_FORM_DATA = {
 const FormSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
-  date: Yup.date().required('Required').nullable(),
+  date: Yup.date().required('Required'),
   comment: Yup.string(),
 });
 

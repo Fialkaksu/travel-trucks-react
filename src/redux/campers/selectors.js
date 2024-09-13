@@ -7,6 +7,7 @@ import {
 
 export const selectAllCampers = state => state.campers.items;
 export const selectCamperById = state => state.campers.camper;
+export const selectPage = state => state.campers.page;
 
 export const selectIsLoading = state => state.campers.loading;
 export const selectError = state => state.campers.error;

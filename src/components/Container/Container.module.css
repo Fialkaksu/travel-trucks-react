@@ -30,10 +30,17 @@
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .catalog {
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .catalog {
-    /* grid-template-columns: 360px 1fr; */
-    grid-template-columns: 360px 888px;
+    grid-template-columns: 360px 1fr;
+    /* grid-template-columns: 360px 888px; */
     gap: 64px;
   }
 }

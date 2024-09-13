@@ -35,7 +35,6 @@ const FiltersForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = values => {
-    console.log('Form submitted with values:', values);
     dispatch(changeFilter(values));
   };
 
@@ -79,8 +78,8 @@ const FiltersForm = () => {
                         'equipment',
                         values.equipment.includes(option.value)
                           ? values.equipment.filter(
-                            item => item !== option.value
-                          )
+                              item => item !== option.value
+                            )
                           : [...values.equipment, option.value]
                       )
                     }

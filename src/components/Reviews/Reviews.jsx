@@ -8,9 +8,9 @@ import css from './Reviews.module.css';
 const Reviews = () => {
   const { reviews } = useSelector(selectCamperById);
 
-  if (!reviews) return null
+  if (!reviews?.length) return <p className={css.noReviews}>No reviews</p>;
 
-  const renderStars = (rating) => {
+  const renderStars = rating => {
     return Array.from({ length: 5 }, (_, index) => (
       <Icon
         key={index}
@@ -35,7 +35,7 @@ const Reviews = () => {
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;
