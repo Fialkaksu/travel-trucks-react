@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { Toaster } from 'react-hot-toast';
 
 import Header from "@components/Header/Header";
 import Loader from "@components/Loader/Loader";
@@ -28,6 +29,8 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
+
+      <Toaster />
     </>
   );
 };

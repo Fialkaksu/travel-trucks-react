@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import { useState } from 'react';
 
 import Button from '@components/Button/Button';
+import { toastAlert } from '@utils/toastAlert';
 
 import clsx from 'clsx';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -30,8 +31,11 @@ const BookingForm = () => {
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
 
-  const handleSubmit = values => {
-    console.log('values', values);
+  const handleSubmit = (values, { resetForm }) => {
+    toastAlert.success(`Dear Camper ${values.name}, your booking 🚍 is confirmed! Thank you!`);
+
+    resetForm();
+    setStartDate(null);
   };
 
   return (

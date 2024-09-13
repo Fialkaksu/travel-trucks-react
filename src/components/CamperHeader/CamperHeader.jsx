@@ -5,6 +5,7 @@ import Icon from '@components/Icon/Icon';
 
 import { selectIsFavorite } from "@redux/favorites/selectors";
 import { addFavorite, removeFavorite } from "@redux/favorites/slice";
+import { toastAlert } from "@utils/toastAlert";
 
 import css from './CamperHeader.module.css';
 
@@ -18,9 +19,11 @@ const CamperHeader = ({ camper }) => {
 
   const handleClick = () => {
     if (isFavorite) {
-      dispatch(removeFavorite(id));
+      dispatch(removeFavorite(id))
+      toastAlert.info('Camper removed from favorites 😢');
     } else {
-      dispatch(addFavorite(camper));
+      dispatch(addFavorite(camper))
+      toastAlert.success('Camper added to favorites 🥳');
     }
   }
 
