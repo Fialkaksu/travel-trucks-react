@@ -18,7 +18,7 @@ const Camper = ({ camper }) => {
       <img src={gallery[0].thumb} alt={name} className={css.camperImage} />
 
       <div className={css.camperDetails}>
-        <CamperHeader {...camper} />
+        <CamperHeader camper={camper} />
 
         <p className={css.camperDescription}>{description}</p>
 

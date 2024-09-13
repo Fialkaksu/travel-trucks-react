@@ -32,6 +32,14 @@ const Header = () => {
                 Catalog
               </NavLink>
             </li>
+            <li className={css.item}>
+              <NavLink
+                className={({ isActive }) => clsx(css.link, isActive && css.active)}
+                to="/favorites"
+              >
+                Favorites
+              </NavLink>
+            </li>
           </ul>
         </nav>
       </Container>

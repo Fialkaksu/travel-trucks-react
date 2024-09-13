@@ -7,9 +7,9 @@
   border-radius: 10px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .wrapper {
-    gap: 24px;
+    gap: 70px;
     padding: 24px;
   }
 }

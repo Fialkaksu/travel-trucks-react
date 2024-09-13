@@ -36,6 +36,7 @@ const Campers = () => {
       ) : (
         <p className={css.notFound}>No campers found</p>
       )}
+
       {isLoadMoreVisible && (
         <Button variant="outlined" onClick={handleClick} aria-label="Load more">
           Load more

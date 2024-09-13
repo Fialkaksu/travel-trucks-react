@@ -7,6 +7,7 @@ import Loader from "@components/Loader/Loader";
 const HomePage = lazy(() => import("@pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("@pages/CatalogPage/CatalogPage"));
 const CamperPage = lazy(() => import("@pages/CamperPage/CamperPage"));
+const FavoritesPage = lazy(() => import("@pages/FavoritesPage/FavoritesPage"));
 const Features = lazy(() => import("@components/Features/Features"));
 const Reviews = lazy(() => import("@components/Reviews/Reviews"));
 
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="features" element={<Features />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>

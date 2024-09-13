@@ -64,6 +64,7 @@
 }
 
 .camperDetails {
+  width: 100%;
   display: grid;
   gap: 12px;
 }

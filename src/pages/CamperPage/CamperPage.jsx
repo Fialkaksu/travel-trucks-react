@@ -46,7 +46,7 @@ const CamperPage = () => {
           <Container>
             {camper && (
               <div className={css.wrapper}>
-                <CamperHeader isCamperDetails {...camper} />
+                <CamperHeader camper={camper} />
 
                 <ul className={css.gallery}>
                   {camper.gallery.map(({ thumb, original }) => (

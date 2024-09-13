@@ -37,7 +37,7 @@
 
 .iconHeart:hover,
 .iconHeart:focus,
-.iconHeart:active .active {
+.active {
   fill: var(--button);
 }
 
