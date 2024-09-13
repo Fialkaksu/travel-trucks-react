@@ -27,7 +27,7 @@ const CatalogPage = () => {
 
   return (
     <>
-      <DocumentTitle title="Catalog" />
+      <DocumentTitle title="Travel Trucks | Catalog" />
 
       <main>
         <section className={css.section}>

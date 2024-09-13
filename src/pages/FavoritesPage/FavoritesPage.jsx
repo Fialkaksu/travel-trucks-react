@@ -14,7 +14,7 @@ const FavoritesPage = () => {
 
   return (
     <>
-      <DocumentTitle title="Favorite Campers" />
+      <DocumentTitle title="Travel Trucks | Favorite Campers" />
 
       <main>
         <section className={css.section}>

@@ -40,7 +40,7 @@ const CamperPage = () => {
 
   return (
     <>
-      <DocumentTitle title="Camper" />
+      <DocumentTitle title="Travel Trucks | Camper" />
 
       {isLoading && <Loader />}
 
