@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Button from '@components/Button/Button';
 import Icon from '@components/Icon/Icon';
 import { changeFilter } from '@redux/filters/slice';
+import { scrollToTheTop } from '@utils/utils';
 
 import css from './FiltersForm.module.css';
 
@@ -36,6 +37,7 @@ const FiltersForm = () => {
 
   const handleSubmit = values => {
     dispatch(changeFilter(values));
+    scrollToTheTop();
   };
 
   return (

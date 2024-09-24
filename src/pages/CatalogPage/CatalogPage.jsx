@@ -6,11 +6,13 @@ import Container from '@components/Container/Container';
 import FiltersForm from '@components/FiltersForm/FiltersForm';
 import Campers from '@components/Campers/Campers';
 import Loader from '@components/Loader/Loader';
+import ScrollUp from '@components/ScrollUp/ScrollUp';
 
 import { getCampers } from '@redux/campers/operations';
 import { selectIsLoading } from '@redux/campers/selectors';
 import { changeFilter, initialState } from '@redux/filters/slice';
 import { toastAlert } from '@utils/toastAlert';
+import { scrollToTheTop } from '@utils/utils';
 
 import css from './CatalogPage.module.css';
 
@@ -25,6 +27,8 @@ const CatalogPage = () => {
     return () => dispatch(changeFilter(initialState));
   }, [dispatch]);
 
+  useEffect(scrollToTheTop, []);
+
   return (
     <>
       <DocumentTitle title="Travel Trucks | Catalog" />
@@ -38,6 +42,7 @@ const CatalogPage = () => {
           </Container>
         </section>
       </main>
+      <ScrollUp />
     </>
   );
 };

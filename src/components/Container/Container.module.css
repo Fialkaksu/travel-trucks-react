@@ -40,7 +40,6 @@
 @media screen and (min-width: 1440px) {
   .catalog {
     grid-template-columns: 360px 1fr;
-    /* grid-template-columns: 360px 888px; */
     gap: 64px;
   }
 }

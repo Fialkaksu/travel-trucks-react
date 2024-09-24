@@ -6,14 +6,10 @@ const EquipmentList = ({ equipment }) => {
   return (
     <ul className={css.equipmentList}>
       {equipment.map(({ icon, label }) => (
-        <EquipmentItem
-          key={label}
-          icon={icon}
-          label={label}
-        />
+        <EquipmentItem key={label} icon={icon} label={label} />
       ))}
     </ul>
-  )
-}
+  );
+};
 
-export default EquipmentList
+export default EquipmentList;

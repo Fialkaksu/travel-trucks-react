@@ -19,10 +19,13 @@ const INITIAL_FORM_DATA = {
 };
 
 const FormSchema = Yup.object().shape({
-  name: Yup.string().required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
-  date: Yup.date().required('Required'),
-  comment: Yup.string(),
+  name: Yup.string()
+    .min(3, 'Please enter minimum 3 characters')
+    .trim()
+    .required('Name is required'),
+  email: Yup.string().email('Invalid email').required('Email is required'),
+  date: Yup.date().required('Booking date is required'),
+  comment: Yup.string().trim(),
 });
 
 const BookingForm = () => {
@@ -32,7 +35,9 @@ const BookingForm = () => {
   tomorrow.setDate(tomorrow.getDate() + 1);
 
   const handleSubmit = (values, { resetForm }) => {
-    toastAlert.success(`Dear Camper ${values.name}, your booking 🚍 is confirmed! Thank you!`);
+    toastAlert.success(
+      `Dear ${values.name}! Your booking has been confirmed! 🚍`
+    );
 
     resetForm();
     setStartDate(null);

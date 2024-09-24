@@ -57,8 +57,10 @@
   cursor: pointer;
 }
 
-.galleryItem:hover .galleryImage {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .galleryItem:hover .galleryImage {
+    transform: scale(1.05);
+  }
 }
 
 .galleryImage {

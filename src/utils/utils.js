@@ -32,3 +32,10 @@ export const formatString = str => {
 export const addSpaceToUnit = str => {
   return str.replace(/(\d+\.?\d*)([a-zA-Z]+)/, '$1 $2');
 };
+
+export const scrollToTheTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};

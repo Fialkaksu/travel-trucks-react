@@ -16,7 +16,7 @@ import { filtersReducer } from '@redux/filters/slice';
 import { favoritesReducer } from '@redux/favorites/slice';
 
 const persistConfig = {
-  key: 'campers',
+  key: 'favoriteCampers',
   storage,
 };
 

@@ -5,7 +5,11 @@ import CamperList from '@components/CamperList/CamperList';
 import Button from '@components/Button/Button';
 
 import { changePage } from '@redux/campers/slice';
-import { selectFilteredCampers, selectPage } from '@redux/campers/selectors';
+import {
+  selectFilteredCampers,
+  selectPage,
+  selectIsLoading,
+} from '@redux/campers/selectors';
 
 import css from './Campers.module.css';
 
@@ -15,6 +19,7 @@ const Campers = () => {
   const page = useSelector(selectPage);
   const itemsPerPage = 4;
   const [visibleItems, setVisibleItems] = useState([]);
+  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     const newVisibleItems = filteredItems.slice(0, itemsPerPage * page);
@@ -31,9 +36,9 @@ const Campers = () => {
 
   return (
     <div className={css.container}>
-      {visibleItems.length > 0 ? (
-        <CamperList items={visibleItems} />
-      ) : (
+      {visibleItems.length > 0 && <CamperList items={visibleItems} />}
+
+      {!isLoading && visibleItems.length === 0 && (
         <p className={css.notFound}>No campers found</p>
       )}
 

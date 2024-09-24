@@ -8,19 +8,23 @@ export const CamperPageNavigation = () => {
     <ul className={css.menu}>
       <li>
         <NavLink
-          to='features'
+          to="features"
           className={({ isActive }) => clsx(css.link, isActive && css.active)}
-        >Features</NavLink>
+        >
+          Features
+        </NavLink>
       </li>
 
       <li>
         <NavLink
-          to='reviews'
+          to="reviews"
           className={({ isActive }) => clsx(css.link, isActive && css.active)}
-        >Reviews</NavLink>
+        >
+          Reviews
+        </NavLink>
       </li>
     </ul>
   );
-}
+};
 
-export default CamperPageNavigation
+export default CamperPageNavigation;

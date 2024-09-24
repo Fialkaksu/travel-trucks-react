@@ -35,10 +35,15 @@
   transition: fill var(--animation-cubicBezier);
 }
 
-.iconHeart:hover,
 .iconHeart:focus,
 .active {
   fill: var(--button);
+}
+
+@media (hover: hover) {
+  .iconHeart:hover {
+    fill: var(--button);
+  }
 }
 
 .iconMap {

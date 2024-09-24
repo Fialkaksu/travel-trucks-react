@@ -8,7 +8,7 @@ const EquipmentItem = ({ icon, label }) => {
       <Icon name={icon} className="small" />
       {label}
     </li>
-  )
-}
+  );
+};
 
-export default EquipmentItem
+export default EquipmentItem;

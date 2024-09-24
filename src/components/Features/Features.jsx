@@ -19,7 +19,7 @@ const Features = () => {
 
       <VehicleDetails {...camper} />
     </div>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;

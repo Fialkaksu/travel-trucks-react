@@ -36,10 +36,10 @@
 
 @keyframes fade-in {
   from {
-    opacity: 0; /* Start with transparency */
+    opacity: 0;
   }
   to {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
   }
 }
 

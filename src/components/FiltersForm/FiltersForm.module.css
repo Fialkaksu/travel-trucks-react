@@ -123,6 +123,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  padding: 2px;
   text-align: center;
   font-weight: 500;
   line-height: 1.5;
@@ -135,16 +136,20 @@
     box-shadow var(--animation-cubicBezier);
 }
 
-.equipmentLabel:hover,
-.vehicleTypeLabel:hover,
 .equipmentLabel:focus,
 .vehicleTypeLabel:focus,
-.equipmentLabel:active,
-.vehicleTypeLabel:active,
 .equipmentLabel:has(:checked),
 .vehicleTypeLabel:has(:checked) {
   border-color: var(--button);
   box-shadow: var(--shadow-small);
+}
+
+@media (hover: hover) {
+  .equipmentLabel:hover,
+  .vehicleTypeLabel:hover {
+    border-color: var(--button);
+    box-shadow: var(--shadow-small);
+  }
 }
 
 .checkbox,

@@ -1,10 +1,10 @@
-import { Link, NavLink } from 'react-router-dom'
-import clsx from 'clsx'
+import { Link, NavLink } from 'react-router-dom';
+import clsx from 'clsx';
 
-import Container from '@components/Container/Container'
-import logo from '@assets/logo.svg'
+import Container from '@components/Container/Container';
+import logo from '@assets/logo.svg';
 
-import css from './Header.module.css'
+import css from './Header.module.css';
 
 const Header = () => {
   return (
@@ -18,7 +18,9 @@ const Header = () => {
           <ul className={css.list}>
             <li className={css.item}>
               <NavLink
-                className={({ isActive }) => clsx(css.link, isActive && css.active)}
+                className={({ isActive }) =>
+                  clsx(css.link, isActive && css.active)
+                }
                 to="/"
               >
                 Home
@@ -26,7 +28,9 @@ const Header = () => {
             </li>
             <li className={css.item}>
               <NavLink
-                className={({ isActive }) => clsx(css.link, isActive && css.active)}
+                className={({ isActive }) =>
+                  clsx(css.link, isActive && css.active)
+                }
                 to="/catalog"
               >
                 Catalog
@@ -34,7 +38,9 @@ const Header = () => {
             </li>
             <li className={css.item}>
               <NavLink
-                className={({ isActive }) => clsx(css.link, isActive && css.active)}
+                className={({ isActive }) =>
+                  clsx(css.link, isActive && css.active)
+                }
                 to="/favorites"
               >
                 Favorites
@@ -44,7 +50,7 @@ const Header = () => {
         </nav>
       </Container>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
